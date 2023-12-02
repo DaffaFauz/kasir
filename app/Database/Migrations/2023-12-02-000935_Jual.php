@@ -25,15 +25,15 @@ class Jual extends Migration
             ],
             'grand_total' => [
                 'type' => 'decimal',
-                'constraint' => '10', '2'
+                'constraint' => '10,2'
             ],
             'dibayar' => [
                 'type' => 'decimal',
-                'constraint' => '10', '2'
+                'constraint' => '10,2'
             ],
             'kembalian' => [
                 'type' => 'decimal',
-                'constraint' => '10', '2'
+                'constraint' => '10,2'
             ],
             'id_kasir' => [
                 'type' => 'int',

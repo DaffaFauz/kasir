@@ -23,14 +23,14 @@ class RinciJual extends Migration
             ],
             'harga_jual' => [
                 'type' => 'decimal',
-                'constraint' => '10', '2'
+                'constraint' => '10,2'
             ],
             'qty' => [
                 'type' => 'int',
             ],
             'total_harga' => [
                 'type' => 'decimal',
-                'constraint' => '10', '2'
+                'constraint' => '10,2'
             ],
         ];
         $this->forge->addField($data);

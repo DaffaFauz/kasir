@@ -25,11 +25,11 @@ class Produk extends Migration
             ],
             'harga_beli' => [
                 'type' => 'decimal',
-                'constraint' => '10', '2'
+                'constraint' => '10,2'
             ],
             'harga_jual' => [
                 'type' => 'decimal',
-                'constraint' => '10', '2'
+                'constraint' => '10,2'
             ],
             'stok' => [
                 'type' => 'int',
