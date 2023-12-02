@@ -4,28 +4,28 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Satuan extends Migration
+class Kategori extends Migration
 {
     public function up()
     {
         //
         $data = [
-            'id_satuan' => [
+            'id_kategori' => [
                 'type' => 'int'
             ],
-            'nama_satuan' => [
+            'nama_kategori' => [
                 'type' => 'varchar',
-                'constraint' => '20'
+                'constraint' => '50'
             ]
         ];
         $this->forge->addField($data);
-        $this->forge->addKey('id_satuan', true);
-        $this->forge->createTable('satuan');
+        $this->forge->addKey('id_kategori', true);
+        $this->forge->createTable('kategori');
     }
 
     public function down()
     {
         //
-        $this->forge->dropTable('satuan');
+        $this->forge->dropTable('kategori');
     }
 }
