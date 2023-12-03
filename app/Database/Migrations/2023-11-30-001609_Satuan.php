@@ -11,7 +11,8 @@ class Satuan extends Migration
         //
         $data = [
             'id_satuan' => [
-                'type' => 'int'
+                'type' => 'int',
+                'auto_increment' => true
             ],
             'nama_satuan' => [
                 'type' => 'varchar',

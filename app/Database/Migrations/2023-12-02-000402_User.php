@@ -11,7 +11,8 @@ class User extends Migration
         //
         $data = [
             'id_user' => [
-                'type' => 'int'
+                'type' => 'int',
+                'auto_increment' => true
             ],
             'nama_user' => [
                 'type' => 'varchar',

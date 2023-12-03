@@ -11,7 +11,8 @@ class Produk extends Migration
         //
         $data = [
             'id_produk' => [
-                'type' => 'int'
+                'type' => 'int',
+                'auto_increment' => true
             ],
             'kode_produk' => [
                 'type' => 'varchar',

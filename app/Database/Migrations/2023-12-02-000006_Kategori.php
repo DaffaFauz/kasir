@@ -11,7 +11,8 @@ class Kategori extends Migration
         //
         $data = [
             'id_kategori' => [
-                'type' => 'int'
+                'type' => 'int',
+                'auto_increment' => true
             ],
             'nama_kategori' => [
                 'type' => 'varchar',

@@ -11,7 +11,8 @@ class Jual extends Migration
         //
         $data = [
             'id_jual' => [
-                'type' => 'int'
+                'type' => 'int',
+                'auto_increment' => true
             ],
             'no_faktur' => [
                 'type' => 'varchar',

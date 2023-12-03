@@ -11,7 +11,8 @@ class RinciJual extends Migration
         //
         $data = [
             'id_rinci' => [
-                'type' => 'int'
+                'type' => 'int',
+                'auto_increment' => true
             ],
             'no_faktur' => [
                 'type' => 'varchar',
