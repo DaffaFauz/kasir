@@ -59,7 +59,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>MasterData</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li class="<?= ($active == 'barang') ? 'active' : '' ?>"><i class="fa fa-puzzle-piece"></i><a href="tables-data.html">Barang</a></li>
-                            <li class="<?= ($active == 'kategori') ? 'active' : '' ?>"><i class="fa fa-puzzle-piece"></i><a href="tables-data.html">Kategori</a></li>
+                            <li class="<?= ($active == 'kategori') ? 'active' : '' ?>"><i class="fa fa-puzzle-piece"></i><a href="/kategori">Kategori</a></li>
                             <li class="<?= ($active == 'satuan') ? 'active' : '' ?>"><i class="fa fa-puzzle-piece"></i><a href="/satuan">Satuan</a></li>
                             <li class="<?= ($active == 'user') ? 'active' : '' ?>"><i class="fa fa-puzzle-piece"></i><a href="tables-data.html">User</a></li>
                         </ul>
