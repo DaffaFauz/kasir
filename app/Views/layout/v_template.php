@@ -74,10 +74,10 @@
                     </li>
 
                     <li class="">
-                        <a href="index.html"> <i class="menu-icon fa fa-cog"></i>Setting</a>
+                        <a href="/setting"> <i class="menu-icon fa fa-cog"></i>Setting</a>
                     </li>
                     <li class="">
-                        <a href="index.html"> <i class="menu-icon fa fa-sign-out"></i>Logout</a>
+                        <a href="/logout"> <i class="menu-icon fa fa-sign-out"></i>Logout</a>
                     </li>
 
 

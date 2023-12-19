@@ -18,6 +18,10 @@ class Produk extends Migration
                 'type' => 'varchar',
                 'constraint' => '20'
             ],
+            'nama_produk' => [
+                'type' => 'varchar',
+                'constraint' => 100,
+                ],
             'id_kategori' => [
                 'type' => 'int',
             ],

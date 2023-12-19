@@ -6,6 +6,10 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->post('/login', 'Home::login');
+$routes->get('/logout', 'Home::logout');
+
+
 $routes->get('/satuan', 'Satuan::index');
 $routes->post('/satuan/tambah', 'Satuan::create');
 $routes->post('/satuan/ubah/(:num)', 'Satuan::update/$1');
@@ -25,3 +29,9 @@ $routes->get('/produk', 'Produk::index');
 $routes->post('/produk/tambah', 'Produk::create');
 $routes->post('/produk/ubah/(:num)', 'Produk::update/$1');
 $routes->delete('/produk/(:num)', 'Produk::delete/$1');
+
+$routes->get('/admin', 'Admin::index');
+$routes->get('/setting', 'Admin::setting');
+$routes->post('/setting/ubah/(:num)', 'Admin::settingUpdate/$1');
+
+$routes->get('/penjualan', 'Penjualan::index');

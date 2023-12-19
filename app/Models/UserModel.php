@@ -17,4 +17,11 @@ class UserModel extends Model
         }
         return $this->where(['id_user' => $iduser])->first();
     }
+
+    public function cekLogin($email, $password){
+        return $this->where([
+            'email' => $email,
+            'password' => $password
+        ])->first();
+    }
 }
