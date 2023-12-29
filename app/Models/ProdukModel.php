@@ -17,4 +17,8 @@ class ProdukModel extends Model
         }
         return $this->where(['id_produk' => $idproduk])->first();
     }
+
+    public function cekKode($kodeProduk){
+        return $this->join('kategori', 'produk.id_kategori=kategori.id_kategori')->join('satuan', 'produk.id_satuan=satuan.id_satuan')->where(['kode_produk' => $kodeProduk])->first();
+    }
 }

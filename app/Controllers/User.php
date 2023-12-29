@@ -22,7 +22,9 @@ class User extends ResourceController
     {
         //
         $data = [
-            'active' => 'useregori',
+            'title' => 'User',
+            'menu' => 'MasterData',
+            'submenu' => 'User',
             'items' => $this->user->getUser()
         ];
         return view('v_user', $data);

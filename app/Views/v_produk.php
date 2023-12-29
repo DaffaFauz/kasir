@@ -38,10 +38,15 @@ if(session()->getFlashData('error')){
       <div class="card">
         <div class="card-header d-flex justify-content-between">
           <strong class="card-title">Data Produk</strong>
+          <div class="button">
           <!-- Button trigger modal -->
+          <button type="button" onclick="newWin = window.open('/laporan/produk', 'newWin', 'toolbar=no, width=1000, height=500')" class="btn btn-warning"><i class="fa fa-print"></i>
+            Print
+          </button>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i>
             Tambah Data
           </button>
+          </div>
         </div>
         <div class="card-body">
           <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -63,7 +68,7 @@ if(session()->getFlashData('error')){
               $no = 1;
               foreach ($items as $item) :
               ?>
-                <tr>
+                <tr class="<?= ($item['stok'] == 0) ? 'text-danger' : '' ?>">
                   <td><?= $no++ ?></td>
                   <td><?= $item['kode_produk'] ?>
                   <td><?= $item['nama_produk'] ?>

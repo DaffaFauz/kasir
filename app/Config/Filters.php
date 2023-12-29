@@ -42,10 +42,11 @@ class Filters extends BaseConfig
                 'except' => [
                     '/', '/login'
                 ]
-                ],
+            ],
             'kasirfilter' => [
                 'except' => [
-                '/', '/login']
+                    '/', '/login'
+                ]
             ]
             // 'honeypot',
             // 'csrf',
@@ -56,15 +57,15 @@ class Filters extends BaseConfig
             'adminfilter' => [
                 'except' => [
                     'logout',
-                    'admin',
+                    'dashboard',
                     'kategori', 'kategori/*',
                     'satuan', 'satuan/*',
                     'user', 'user/*',
                     'produk', 'produk/*',
                     'penjualan', 'penjualan/*',
-                    'setting'
+                    'setting', 'laporan', 'laporan/*'
                 ]
-                ],
+            ],
             'kasirfilter' => [
                 'except' => [
                     'penjualan', 'penjualan/*',

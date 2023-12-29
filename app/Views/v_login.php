@@ -2,11 +2,13 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>E-Kasir | Login</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,6 +29,7 @@
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
 </head>
+
 <body class="bg-dark">
 
 
@@ -41,41 +44,53 @@
                 <div class="login-form">
                     <h3 class="text-center mb-3">Sign In</h3>
                     <?php
-                        if (session()->getFlashdata('pesan')) {
-                        ?>
+                    if (session()->getFlashdata('pesan')) {
+                    ?>
                         <div class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
                             <span class="badge badge-pill badge-primary">Success</span>
                             <?= session()->getFlashdata('pesan') ?>
 
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <?php
-                        }
+                    <?php
+                    }
 
-                        if(session()->getFlashData('error')){
-                        ?>
-                            <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
+                    if (session()->getFlashData('error')) {
+                    ?>
+                        <div class="sufee-alert alert with-close alert-danger alert-dismissible fade show">
                             <span class="badge badge-pill badge-danger">Failed</span>
                             <?= session()->getFlashdata('error') ?>
 
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <?php
-                        }
-                        ?>
+                    <?php
+                    }
+                    ?>
                     <form action="/login" method="post">
                         <?= csrf_field() ?>
                         <div class="form-group">
                             <label>Email address</label>
-                            <input type="email" class="form-control <?= (session('validation.email'))? 'is-invalid' : '' ?>" placeholder="example@gmail.com" name="email">
+                            <div class="input-group">
+                                <input type="email" class="form-control <?= (session('validation.email')) ? 'is-invalid' : '' ?>" placeholder="example@gmail.com" name="email">
+                                <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                            </div>
+                            <div class="invalid-feedback">
+                                <?= session('validation.email') ?>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control <?= (session('validation.password'))? 'is-invalid' : '' ?>" placeholder="Password" name="password">
+                            <div class="input-group">
+                                <input type="password" class="form-control <?= (session('validation.password')) ? 'is-invalid' : '' ?>" placeholder="Password" name="password">
+                                <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                            </div>
+                            <div class="invalid-feedback">
+                                <?= session('validation.password') ?>
+                            </div>
                         </div>
                         <div class="checkbox">
                             <label>
@@ -97,4 +112,5 @@
 
 
 </body>
+
 </html>

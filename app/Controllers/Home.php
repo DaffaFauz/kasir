@@ -14,13 +14,11 @@ class Home extends BaseController
     }
     public function index()
     {
-        $data = [
-            'active' => 'dashboard'
-        ];
-        return view('v_login', $data);
+        return view('v_login');
     }
 
-    public function login(){
+    public function login()
+    {
         $validation = \Config\Services::validation();
         $validation->setRules([
             'email' => [
@@ -29,42 +27,42 @@ class Home extends BaseController
                 'errors' => [
                     'required' => '{field} harus diisi!'
                 ]
-                ],
-                'password' => [
-                    'label' => 'Password',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
+            ],
+            'password' => [
+                'label' => 'Password',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
         ]);
         $data = $this->request->getVar();
-        if(!$validation->run($data)){
-            session()->setFlashdata('error', 'Data gagal ditambahkan! Silahkan periksa kembali');
+        if (!$validation->run($data)) {
+            session()->setFlashdata('error', 'Data tidak boleh kosong! Silahkan periksa kembali');
             return redirect()->to(base_url('/'))->withInput()->with('validation', $validation->getErrors());
         }
         $email = $this->request->getVar('email');
         $password = sha1($this->request->getVar('password'));
         $cek = $this->user->cekLogin($email, $password);
-        if($cek){
+        if ($cek) {
             session()->set('nama', $cek['nama_user']);
             session()->set('level', $cek['level']);
             session()->set('id', $cek['id_user']);
 
-            if($cek['level'] == 1){
-                return redirect()->to(base_url('/admin'));
-            }else{
+            if ($cek['level'] == 1) {
+                return redirect()->to(base_url('/dashboard'));
+            } else {
                 return redirect()->to(base_url('/penjualan'));
             }
-        }else{
-            session()->setFlashdata('gagal', 'Username atau Password salah!');
+        } else {
+            session()->setFlashdata('error', 'Username atau Password salah!');
             return redirect()->to(base_url('/'));
         }
-
     }
 
-    public function logout(){
-        session()->remove(['nama','level','id']);
+    public function logout()
+    {
+        session()->remove(['nama', 'level', 'id']);
         session()->setFlashdata('pesan', 'Anda berhasil logout');
         return redirect()->to(base_url('/'));
     }

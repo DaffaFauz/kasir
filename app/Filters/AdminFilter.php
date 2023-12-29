@@ -25,7 +25,7 @@ class AdminFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(session()->get('level') == null){
+        if (session()->get('level') == null) {
             return redirect()->to(base_url('/'));
         }
     }
@@ -44,8 +44,8 @@ class AdminFilter implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        if(session()->get('level') == 1){
-            return redirect()->to(base_url('/admin'));
+        if (session()->get('level') == 1) {
+            return redirect()->to(base_url('/dashboard'));
         }
     }
 }

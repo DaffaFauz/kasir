@@ -28,7 +28,9 @@ class Produk extends ResourceController
     {
         //
         $data = [
-            'active' => 'useregori',
+            'title' => 'Produk',
+            'menu' => 'MasterData',
+            'submenu' => 'Produk',
             'items' => $this->produk->getProduk(),
             'kategori' => $this->kat->getKategori(),
             'satuan' => $this->sat->getSatuan(),
@@ -52,52 +54,52 @@ class Produk extends ResourceController
                     'is_unique' => '{field} sudah ada!',
                     'required' => '{field} harus diisi!'
                 ]
-                ],
-                'nama_produk' => [
-                    'label' => 'Nama produk',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'id_kategori' => [
-                    'label' => 'Kategori',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'id_satuan' => [
-                    'label' => 'Satuan',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'harga_beli' => [
-                    'label' => 'Harga beli',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'harga_jual' => [
-                    'label' => 'Harga jual',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'stok' => [
-                    'label' => 'Stok barang',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
+            ],
+            'nama_produk' => [
+                'label' => 'Nama produk',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'id_kategori' => [
+                'label' => 'Kategori',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'id_satuan' => [
+                'label' => 'Satuan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'harga_beli' => [
+                'label' => 'Harga beli',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'harga_jual' => [
+                'label' => 'Harga jual',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'stok' => [
+                'label' => 'Stok barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
         ]);
         $data = $this->request->getVar();
-        if(!$validation->run($data)){
+        if (!$validation->run($data)) {
             session()->setFlashdata('error', 'Data gagal ditambahkan! Silahkan periksa kembali');
             return redirect()->to(base_url('/produk'))->withInput()->with('validation', $validation->getErrors());
         }
@@ -131,52 +133,52 @@ class Produk extends ResourceController
                 'errors' => [
                     'required' => '{field} harus diisi!'
                 ]
-                ],
-                'nama_produk' => [
-                    'label' => 'Nama produk',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'id_kategori' => [
-                    'label' => 'Kategori',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'id_satuan' => [
-                    'label' => 'Satuan',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'harga_beli' => [
-                    'label' => 'Harga beli',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'harga_jual' => [
-                    'label' => 'Harga jual',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
-                'stok' => [
-                    'label' => 'Stok barang',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} harus diisi!'
-                    ]
-                    ],
+            ],
+            'nama_produk' => [
+                'label' => 'Nama produk',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'id_kategori' => [
+                'label' => 'Kategori',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'id_satuan' => [
+                'label' => 'Satuan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'harga_beli' => [
+                'label' => 'Harga beli',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'harga_jual' => [
+                'label' => 'Harga jual',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
+            'stok' => [
+                'label' => 'Stok barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi!'
+                ]
+            ],
         ]);
         $data = $this->request->getVar();
-        if(!$validation->run($data)){
+        if (!$validation->run($data)) {
             session()->setFlashdata('error', 'Data gagal ditambahkan! Silahkan periksa kembali');
             return redirect()->to(base_url('/produk'))->withInput()->with('validation', $validation->getErrors());
         }

@@ -22,7 +22,9 @@ class Kategori extends ResourceController
     {
         //
         $data = [
-            'active' => 'kategori',
+            'title' => 'Kategori',
+            'menu' => 'MasterData',
+            'submenu' => 'Kategori',
             'items' => $this->kat->getKategori()
         ];
         return view('v_kategori', $data);

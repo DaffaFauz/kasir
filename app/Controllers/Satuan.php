@@ -22,7 +22,9 @@ class Satuan extends ResourceController
     {
         //
         $data = [
-            'active' => 'satuan',
+            'title' => 'Satuan',
+            'menu' => 'MasterData',
+            'submenu' => 'Satuan',
             'items' => $this->sat->getSatuan()
         ];
         return view('v_satuan', $data);
